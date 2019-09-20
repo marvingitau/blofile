@@ -5,13 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Projects;
+use DB;
 
 class PagesController extends Controller
 {
     public function index()
     {
+        
+        //dd(Request());
+
         $pro = Projects::all();
-        return view('project.index',compact('pro'));
+        return view('project.index',compact('pro')); 
+       
+        // $users = DB::table('projects')->where('title','=','S.Africa')->get();
+        // dd($users->all(),$users->get('0'),$users->all()[0]->title);
+        // return view('project.index', ['users' => $users]);
     }
 
     public function create()

@@ -22,6 +22,9 @@ Route::post('/project/store','PagesController@store');
 Route::get('/project/{id}/edit/','PagesController@edit');
 Route::patch('/project/{id}/update/','PagesController@update');
 Route::delete('/project/{id}/destroy/','PagesController@destroy');
+
+
+Route::patch('/tasks/{id}','ProjectTaskController@update');
 // Route::get('/','PagesController@index');
 // Route::get('/create', 'PagesController@create');
 // Route::get('/show/{id}','PageController@show');
