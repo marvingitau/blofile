@@ -17,7 +17,7 @@ return [
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
-        'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
+        'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'), 
     ],
 
     'postmark' => [
@@ -42,6 +42,13 @@ return [
             'secret' => env('STRIPE_WEBHOOK_SECRET'),
             'tolerance' => env('STRIPE_WEBHOOK_TOLERANCE', 300),
         ],
+    ],
+
+    'twitter'=>[
+
+       'public' => env('TWITTER_KEY'),
+       'private' => env('TWITTER_SECRET'),
+
     ],
 
 ];

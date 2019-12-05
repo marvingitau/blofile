@@ -17,8 +17,8 @@ class PagesController extends Controller
         $pro = Projects::all();
         return view('project.index',compact('pro')); 
        
-        // $users = DB::table('projects')->where('title','=','S.Africa')->get();
-        // dd($users->all(),$users->get('0'),$users->all()[0]->title);
+       // $users = DB::table('projects')->where('title','=','S.Africa')->get();
+       // dd($users->all(),$users->get('0'),$users->all()[0]->title);
         // return view('project.index', ['users' => $users]);
     }
 
@@ -37,7 +37,7 @@ class PagesController extends Controller
         // THE CODE ABOVE CAN BE REP BY BELOW
         $succ= request()->validate([
             'title'=> ['required' ,'min:3'],
-            'description' => ['required' ,'min:3']
+            'description' => ['required' ,'min:3']  // => this used here for conditions
         ]);
 
         //return $succ;
@@ -66,7 +66,7 @@ class PagesController extends Controller
     public function update($id)
     {
     
-        $project = Projects::find($id);
+        $project = Projects::find($id);  //taking the eloquet model
         $project->title = request('title');
         $project->description = request('description');
         $project->save();
